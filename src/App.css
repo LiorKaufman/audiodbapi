@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  color: #495057;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.search {
+  height: 100px;
+}
+
+.search-input {
+  display: block;
+  padding: 10px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 5px;
+  width: 60%;
+  margin: auto;
+  margin-top: 1.25rem;
+}
+
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.my-card {
+  cursor: pointer;
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.my-card h1 {
+  font-size: 25px;
+  border-bottom: 1px #fff solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.my-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.my-card-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.my-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.my-card:hover .my-card-inner {
+  transform: rotateY(180deg);
+}
+
+.my-card-front,
+.my-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.my-card-back {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+.card li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+.artist-card {
+  height: 400px;
+  overflow: auto;
+}
+
+.albums-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+}
+
+.album-card {
+  height: 180px;
+  max-height: 200px;
+  max-width: 200px;
+  position: relative;
+  text-align: center;
+  margin: 1.5rem;
+}
+code,
+#editor {
+  font-family: 'Source Code Pro', monospace;
+  width: 100%;
+}
+.album-img {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.6;
+}
+
+.album-text {
+  position: absolute;
+  color: #333;
+  font-weight: 800;
+  font-size: 1rem;
+  margin: 3px;
+}
+.edit-page {
+  height: auto;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.my-container {
+  margin-bottom: 1.5rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.about-col {
+  color: #333;
+  border-radius: 8px;
+  border: 2px solid lightblue;
+  height: 220px;
+  max-width: 300px;
+  margin: 1rem;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  list-style: none;
+}
+
+@media (max-width: 800px) {
+  .cards-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .albums-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  .my-container {
+    height: 100vh;
+    overflow: auto;
+  }
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .cards-list {
+    grid-template-columns: 1fr;
+  }
+  .albums-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .my-container {
+    height: 100vh;
+    overflow: auto;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
