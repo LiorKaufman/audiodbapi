@@ -25,7 +25,7 @@ function App() {
       setIsLoading(true);
 
       const result = await axios(
-        `http://theaudiodb.com/api/v1/json/1/search.php?s=${query}`
+        `https://theaudiodb.com/api/v1/json/1/search.php?s=${query}`
       );
 
       setItems(result.data.artists);

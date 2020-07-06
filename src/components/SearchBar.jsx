@@ -14,7 +14,7 @@ const SearchBar = ({ getQuery }) => {
         <input
           type='text'
           className='form-control search-input'
-          placeholder='Search characters'
+          placeholder='Search Artist by Name'
           value={text}
           onChange={(e) => onChange(e.target.value)}
           autoFocus

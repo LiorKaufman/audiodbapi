@@ -13,7 +13,7 @@ export default function ArtistCard({ item, toggleEdit }) {
       setIsLoading(true);
 
       const result = await axios(
-        `http://theaudiodb.com/api/v1/json/1/album.php?i=${item.idArtist}
+        `https://theaudiodb.com/api/v1/json/1/album.php?i=${item.idArtist}
         `
       );
 
